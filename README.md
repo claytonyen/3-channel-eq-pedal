@@ -12,7 +12,7 @@ Audio input:
 Audio output after EQ: 
 
 ## Frequency Response
-Using this ![guitar EQ guide](https://neuraldsp.com/articles/electric-guitar-eq-guide) from neuraldsp.com, I set my channels to be centered at 80 Hz for bass, 800 Hz for mids, and ~6.3 kHz for the highs.
+Guided by this ![guitar EQ guide](https://neuraldsp.com/articles/electric-guitar-eq-guide) from neuraldsp.com, I set my channels to be centered at 80 Hz for bass, 800 Hz for mids, and ~6.3 kHz for the highs. I also used two Sallen-Key filters after the input buffer, one low-pass and one high-pass, to cut frequencies above 10 kHz and below 70 Hz
 
 ![freq response](media/Frequency_Response_Screenshot.png)
 
@@ -21,7 +21,7 @@ The frequency response graph sweeps across the 10kΩ mixer resistor of at interv
 ## Iterations
 I tried different types of filters when constructing this equalizer circuit. Shown below is my first iteration which was a passive resistor capacitor ladder which is similar to a Baxandall-style tone stack. It had a boosting stage at the end since the ladder only attenuates the signal.
 
-![ladder circuit img]()
+![ladder circuit img](media/tonestack_circuit_screenshot.png)
 
 While this tone stack has a smoother frequency response when changing each channel's potentiometer, that means that changes can bleed across channels. Furthermore, the treble knob is bridges the output of the tone stack and input of the boosting stage. As a result, turning the treble knob not only changes the treble level, but modifies the mixing of the bass and mids channel into the final signal, which could be an undesired side effect if the musician wants to make more targeted adjustments. Below are three images of the channels stepped through 100kΩ at intervals of 10kΩ. Image order: bass, mids, treble
 
