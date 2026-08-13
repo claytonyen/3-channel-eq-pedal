@@ -8,8 +8,8 @@ The purpose of an equalizer (EQ) is to boost, cut, or shape specific audio frequ
 ## Circuit & Example Audio Output
 ![ltspice circuit](media/Circuit_Screenshot.png)
 
-Audio input: 
-Audio output after EQ: 
+Audio input: ![link](https://github.com/user-attachments/assets/9bb6c3f6-bb58-4948-9f30-9879344538e1)
+Audio output after EQ: ![link](https://github.com/user-attachments/assets/370b1aea-a95a-47ad-a880-b9828c68c71b)
 
 ## Frequency Response
 Guided by this ![guitar EQ guide](https://neuraldsp.com/articles/electric-guitar-eq-guide) from neuraldsp.com, I set my channels to be centered at 80 Hz for bass, 800 Hz for mids, and ~6.3 kHz for the highs. I also used two Sallen-Key filters after the input buffer, one low-pass and one high-pass, to cut frequencies above 10 kHz and below 70 Hz
@@ -31,6 +31,8 @@ While this tone stack has a smoother frequency response when changing each chann
 
 ![ladder treble change img](media/iteration_1_treble.png)
 
-After this, I tried using 
+After this, I tried using more targeted filters in iteration 2. It uses passive low shelf, high shelf, and bandpass filters into a summing op-amp and amplification stage. The individual channel control was still not good, probably because the ends of the shelf filters bled into each other. Besides that, the major problem was lack of mixing the filtered channels with the dry signal, which is what I fixed in the final iteration! The second iteration circuit is below.
+
+![second iteration circuit img](media/attempt2_circuit_screenshot.png)
 
 ## Future Improvements
