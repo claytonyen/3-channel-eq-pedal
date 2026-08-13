@@ -36,3 +36,4 @@ After this, I tried using more targeted filters in iteration 2. It uses passive 
 ![second iteration circuit img](media/attempt2_circuit_screenshot.png)
 
 ## Future Improvements
+Currently, the mids and treble bands merge as seen in the frequency response, so an improvement could be narrowing the bands. However, that comes with tradeoffs like increasing the Q factor, which would mean needing more precise components and changing the peak boost or cut level.
